@@ -163,7 +163,7 @@ func (e *EngineSimulator) SimulateStopReplica(addr string) error {
 }
 
 func (e *EngineSimulator) SnapshotCreate(engine *longhorn.Engine, name string, labels map[string]string,
-	freezeFilesystem bool) (string, error) {
+	freezeFilesystem bool, userCreated bool) (string, error) {
 	return "", fmt.Errorf(ErrNotImplement)
 }
 

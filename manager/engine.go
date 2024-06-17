@@ -114,7 +114,7 @@ func (m *VolumeManager) CreateSnapshot(snapshotName string, labels map[string]st
 	}
 	defer engineClientProxy.Close()
 
-	snapshotName, err = engineClientProxy.SnapshotCreate(e, snapshotName, labels, freezeFilesystem)
+	snapshotName, err = engineClientProxy.SnapshotCreate(e, snapshotName, labels, freezeFilesystem, true)
 	if err != nil {
 		return nil, err
 	}

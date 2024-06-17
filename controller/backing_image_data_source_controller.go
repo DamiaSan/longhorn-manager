@@ -848,7 +848,7 @@ func (c *BackingImageDataSourceController) prepareRunningParameters(bids *longho
 		defer engineClientProxy.Close()
 
 		snapLabels := map[string]string{types.GetLonghornLabelKey(types.LonghornLabelSnapshotForExportingBackingImage): bids.Name}
-		snapshotName, err := engineClientProxy.SnapshotCreate(e, bids.Name+"-"+util.RandomID(), snapLabels, freezeFilesystem)
+		snapshotName, err := engineClientProxy.SnapshotCreate(e, bids.Name+"-"+util.RandomID(), snapLabels, freezeFilesystem, false)
 		if err != nil {
 			return err
 		}

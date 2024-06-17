@@ -16,7 +16,7 @@ import (
 // SnapshotCreate calls engine binary
 // TODO: Deprecated, replaced by gRPC proxy
 func (e *EngineBinary) SnapshotCreate(engine *longhorn.Engine, name string, labels map[string]string,
-	freezeFilesystem bool) (string, error) {
+	freezeFilesystem bool, userCreated bool) (string, error) {
 	args := []string{"snapshot", "create"}
 	for k, v := range labels {
 		args = append(args, "--label", k+"="+v)

@@ -221,3 +221,7 @@ require (
 	sigs.k8s.io/structured-merge-diff/v4 v4.4.1 // indirect
 	sigs.k8s.io/yaml v1.3.0 // indirect
 )
+
+replace github.com/longhorn/longhorn-instance-manager v1.7.0-dev.0.20240613151145-0c7a73712efe => github.com/DamiaSan/longhorn-instance-manager v0.0.0-20240617152954-fad264117813
+
+replace github.com/longhorn/types v0.0.0-20240612122407-553c71ad6514 => github.com/DamiaSan/types v0.0.0-20240614083836-d8bb301b2af5

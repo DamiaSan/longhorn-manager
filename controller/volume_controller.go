@@ -4443,7 +4443,7 @@ func (c *VolumeController) createSnapshot(snapshotName string, labels map[string
 		}
 	}
 
-	snapshotName, err = engineClientProxy.SnapshotCreate(e, snapshotName, labels, freezeFilesystem)
+	snapshotName, err = engineClientProxy.SnapshotCreate(e, snapshotName, labels, freezeFilesystem, false)
 	if err != nil {
 		return nil, err
 	}

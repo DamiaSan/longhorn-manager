@@ -650,7 +650,8 @@ func (sc *SnapshotController) handleSnapshotCreate(snapshot *longhorn.Snapshot, 
 	}
 	if snapshotInfo == nil {
 		sc.logger.Infof("Creating snapshot %v of volume %v", snapshot.Name, snapshot.Spec.Volume)
-		_, err = engineClientProxy.SnapshotCreate(engine, snapshot.Name, snapshot.Spec.Labels, freezeFilesystem)
+		_, err = engineClientProxy.SnapshotCreate(engine, snapshot.Name, snapshot.Spec.Labels, freezeFilesystem,
+			snapshot.Status.UserCreated)
 		if err != nil {
 			return err
 		}
